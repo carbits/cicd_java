@@ -19,7 +19,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest]
+        os: [ubuntu-latest]
         #os: [ubuntu-latest, windows-latest, macOS-latest]
         
     steps:
@@ -43,7 +43,6 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew build
- 
  
     - name: List the Files in ./build folder
       run: ls -lartR ./build
