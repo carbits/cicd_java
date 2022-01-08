@@ -19,7 +19,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest]
+        os: [ubuntu-latest]
         #os: [ubuntu-latest, windows-latest, macOS-latest]
         
     steps:
@@ -45,8 +45,8 @@ jobs:
       run: ./gradlew build
  
  
-    - name: Build with Gradle
-      run: ls -lartR /
+    - name: List the Files in ./build folder
+      run: ls -lartR ./build
  
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
